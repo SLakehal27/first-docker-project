@@ -1,7 +1,7 @@
 # first-docker-project
 ### Requirements : 
 
-Docker desktop.
+Docker desktop.\
 WSL/Linux.
 
 ### Basic setup:
