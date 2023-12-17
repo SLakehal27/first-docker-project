@@ -1,0 +1,13 @@
+version: '3.8'
+#Name of the container
+services:
+  myapi: 
+    build: .
+    container_name: nodeapi
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./server:/src
+      - unused:/src/node_modules
+volumes:
+  unused:
