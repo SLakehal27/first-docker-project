@@ -3,14 +3,14 @@ FROM node:17-alpine
 
 WORKDIR /src
 
-COPY ./server/package.json .
-COPY ./server/package-lock.json .
+COPY package.json .
+COPY package-lock.json .
 
 # Installe les dépendances (They're cached since i copied them beforehand)
 RUN npm ci 
 
 # Copie les fichiers à /src
-COPY /server .
+COPY . .
 
 
 # Donne au container le port 500

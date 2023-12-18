@@ -2,12 +2,23 @@ version: '3.8'
 #Name of the container
 services:
   myapi: 
-    build: .
+    build: ./server
     container_name: nodeapi
     ports:
       - '5000:5000'
     volumes:
       - ./server:/src
-      - unused:/src/node_modules
+      - unused_back:/src/node_modules
+  frontend:
+    build: ./frontend
+    container_name: whalefront
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend:/front
+      - unused_front:/front/node_modules
+    stdin_open: true
+    tty: true
 volumes:
-  unused:
+  unused_front:
+  unused_back:
